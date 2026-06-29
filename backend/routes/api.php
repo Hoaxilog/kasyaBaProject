@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ScanController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -8,8 +9,5 @@ use Illuminate\Support\Facades\Route;
 // })->middleware('auth:sanctum');
 
 
-Route::post('/cart/scan', function() {
 
-    return response()->json(['message' => "YOU SHOULD SEE THIS"]);
-
-});
+Route::post('/cart/scan', [ScanController::class, 'receiveImage']);
